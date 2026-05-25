@@ -2,15 +2,28 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title> - Articles</title>
-    <description>Le blog d'Alejandro Mantecón Guillén</description>
+    <description>Le blog d&apos;Alejandro Mantecón Guillén</description>
     <link>
     http://alemangui.github.io</link>
     
       
       <item>
-        <title>Les biais de l'intelligence artificielle</title>
+        <title>Monte Sole et l&apos;âme bolognaise</title>
         
-          <description>Cette nouvelle technologie devenue omniprésente renforce nos préjugés. Comment ne pas pérenniser nos déviations de jugement ?</description>
+          <description>« Pour comprendre Bologne il faut d&apos;abord comprendre i colli », l&apos;overnighter Bologne - Monte Sole à vélo.</description>
+        
+        <pubDate>Mon, 20 Oct 2025 00:00:00 +0200</pubDate>
+        <link>
+        http://alemangui.github.io/monte-sole-e-l-ame-bolognaise</link>
+        <guid isPermaLink="true">http://alemangui.github.io/monte-sole-e-l-ame-bolognaise</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Les biais de l&apos;intelligence artificielle</title>
+        
+          <description>Cette technologie devenue omniprésente renforce nos préjugés. Comment ne pas pérenniser nos déviations de jugement ?</description>
         
         <pubDate>Sat, 09 May 2020 00:00:00 +0200</pubDate>
         <link>
@@ -23,7 +36,7 @@
       <item>
         <title>Tests automatiques avec autoplay</title>
         
-          <description>Les navigateurs implémentent des fonctionnalités permettant de bloquer le contenu audio qui démarre automatiquement. Comment s'en sortir en tant que développeur ?</description>
+          <description>Les navigateurs implémentent des fonctionnalités permettant de bloquer le contenu audio qui démarre automatiquement. Comment s&apos;en sortir en tant que développeur ?</description>
         
         <pubDate>Wed, 25 Mar 2020 00:00:00 +0100</pubDate>
         <link>

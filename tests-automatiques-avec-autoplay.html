@@ -180,11 +180,6 @@ into the {body} of the default.hbs template -->
                 <h1 class="post-full-title">Tests automatiques avec autoplay</h1>
             </header>
 
-            
-            <figure class="post-full-image" style="background-image: url(/assets/images/devs-back.jpg)">
-            </figure>
-            
-
             <section class="post-full-content">
                 <div class="kg-card-markdown">
                     <p>Depuis 2017, les différents navigateurs implémentent des fonctionnalités permettant de bloquer le son qui démarre automatiquement. Ceci n’a rien d’étonnant : on a tous vécu la nuisance des vidéos en autoplay qui se cachent parmi les nombreux onglets du navigateur. Néanmoins, pour les développeurs qui se basent de façon légitime sur l’autoplay (notamment pour des jeux vidéos ou applications multimédia), ces restrictions peuvent causer des difficultés.</p>
@@ -217,14 +212,14 @@ Chrome 80.0.3987 <span class="o">(</span>Linux 0.0.0<span class="o">)</span>: Ex
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">Chrome <span class="nt">--autoplay-policy</span><span class="o">=</span>no-user-gesture-required<span class="s1">'</span></code></pre></figure>
 
-<p>Pour intégrer ceci dans Pizzicato, il suffit de modifier le <a href="https://github.com/alemangui/pizzicato/blob/master/karma.conf.js">fichier de configuration de Karma</a>. Au moment de définir les <code class="highlighter-rouge">customLaunchers</code> nous pouvons aussi profiter pour passer des arguments additionnels.</p>
+<p>Pour intégrer ceci dans Pizzicato, il suffit de modifier le <a href="https://github.com/alemangui/pizzicato/blob/master/karma.conf.js">fichier de configuration de Karma</a>. Au moment de définir les <code class="language-plaintext highlighter-rouge">customLaunchers</code> nous pouvons aussi profiter pour passer des arguments additionnels.</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">customLaunchers</span><span class="p">:</span> <span class="p">{</span>
     <span class="nl">Chrome_travis_ci</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nl">base</span><span class="p">:</span> <span class="s1">'Chrome'</span><span class="p">,</span>
-        <span class="nx">flags</span><span class="p">:</span> <span class="p">[</span>
-            <span class="s1">'--no-sandbox'</span><span class="p">,</span>
-            <span class="s1">'--autoplay-policy=no-user-gesture-required'</span>
+        <span class="na">base</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Chrome</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">flags</span><span class="p">:</span> <span class="p">[</span>
+            <span class="dl">'</span><span class="s1">--no-sandbox</span><span class="dl">'</span><span class="p">,</span>
+            <span class="dl">'</span><span class="s1">--autoplay-policy=no-user-gesture-required</span><span class="dl">'</span>
         <span class="p">]</span>
     <span class="p">}</span>
 <span class="p">},</span></code></pre></figure>
@@ -344,6 +339,8 @@ Chrome 80.0.3987 <span class="o">(</span>Linux 0.0.0<span class="o">)</span>: Ex
                         <div class="read-next-card-content">
                             <ul>
                                 
+                                
+                                  
                                 
                                   
                                 
@@ -526,7 +523,7 @@ Chrome 80.0.3987 <span class="o">(</span>Linux 0.0.0<span class="o">)</span>: Ex
         <!-- The footer at the very bottom of the screen -->
         <footer class="site-footer outer">
             <div class="site-footer-content inner">
-                <section class="copyright"><a href="http://alemangui.github.io/">Alejandro Mantecón Guillén</a> &copy; 2020</section>
+                <section class="copyright"><a href="http://alemangui.github.io/">Alejandro Mantecón Guillén</a> &copy; 2026</section>
 
                 <nav class="site-footer-nav">
                     

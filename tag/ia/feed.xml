@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <feed xmlns="http://www.w3.org/2005/Atom" >
-  <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
+  <generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator>
   <link href="http://alemangui.github.io/tag/ia/feed.xml" rel="self" type="application/atom+xml" />
   <link href="http://alemangui.github.io/" rel="alternate" type="text/html" />
-  <updated>2020-08-21T10:11:07+02:00</updated>
+  <updated>2026-05-25T11:46:45+02:00</updated>
   <id>http://alemangui.github.io/tag/ia/feed.xml</id>
 
   
@@ -16,7 +16,7 @@
   
 
   
-    <subtitle>Le blog d'Alejandro Mantecón Guillén</subtitle>
+    <subtitle>Le blog d&apos;Alejandro Mantecón Guillén</subtitle>
   
 
   
@@ -33,13 +33,13 @@
   
     <entry>
       <title type="html">Les biais de l’intelligence artificielle</title>
-      <link href="http://alemangui.github.io/biais-intelligence-artificielle" rel="alternate" type="text/html" title="Les biais de l'intelligence artificielle" />
+      <link href="http://alemangui.github.io/biais-intelligence-artificielle" rel="alternate" type="text/html" title="Les biais de l&apos;intelligence artificielle" />
       <published>2020-05-09T00:00:00+02:00</published>
       <updated>2020-05-09T00:00:00+02:00</updated>
       <id>http://alemangui.github.io/biais-intelligence-artificielle</id>
       <content type="html" xml:base="http://alemangui.github.io/biais-intelligence-artificielle">&lt;p&gt;Le 10 mars 2016, le meilleur joueur de go du monde, Lee Sedol, affrontait AlphaGo, un programme informatique développé par Google DeepMind. S’attaquer au Go est une tâche particulièrement difficile pour l’intelligence artificielle (IA) car, à différence des échecs, les ordinateurs ne sont pas capables de calculer toutes les combinaisons possibles du jeu (plus nombreuses que le nombre d’atomes dans l’univers). Dès lors, pour s’imposer face à son rival, AlphaGo devait faire preuve d’intuition et créativité : deux qualités considérées essentiellement humaines.&lt;/p&gt;
 
-&lt;p&gt;Au bout d’une heure et demie de jeu, lors du 37ème tour, AlphaGo joue un coup déconcertant : la position O10. &lt;a href=&quot;https://youtu.be/l-GsfyVCBu0?t=4692&quot;&gt;Les commentateurs&lt;/a&gt; envisagent la possibilité qu’il s’agisse d’une erreur. Les spécialistes  ont du mal à croire cette décision amplement considérée comme mauvaise. Néanmoins, après trois heures et demie de jeu, AlphaGo bat Lee Sedol, confirmant ainsi le génie derrière ce mouvement. Le coup 37 est rentré dans la liste des moments phares de l’IA, prouvant sa capacité à développer une créativité dépassant celle de son homologue humain.&lt;/p&gt;
+&lt;p&gt;Au bout d’une heure et demie de jeu, lors du 37ème tour, AlphaGo joue un coup déconcertant : la position O10. &lt;a href=&quot;https://youtu.be/l-GsfyVCBu0?t=4692&quot;&gt;Les commentateurs&lt;/a&gt; envisagent la possibilité qu’il s’agisse d’une erreur. Les spécialistes ont du mal à croire cette décision amplement considérée comme mauvaise. Néanmoins, après trois heures et demie de jeu, AlphaGo bat Lee Sedol, confirmant ainsi le génie derrière ce mouvement. Le coup 37 est rentré dans la liste des moments phares de l’IA, prouvant sa capacité à développer une créativité dépassant celle de son homologue humain.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;assets/images/commentary_go.jpg&quot; /&gt;
 &lt;small class=&quot;caption&quot;&gt;Les commentateurs du match entre Lee Sedol et AlphaGo surpris par le mouvement 37 &lt;a href=&quot;https://www.youtube.com/watch?v=l-GsfyVCBu0&amp;amp;feature=youtu.be&amp;amp;t=4692&quot;&gt;Vidéo&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
@@ -49,8 +49,8 @@
 &lt;p&gt;Néanmoins, éduquer une machine n’est pas chose aisée et les enseignants chargés de cette tâche sommes nous tous. Nous, qui sommes si prônes à une multitude d’irrationalités. Nous, qui entretenons des dogmes remarquablement résistants aux faits qui les contredisent. Nous qui, en délégant tant d’aspects de nos vies aux nouvelles technologies, prenons le risque de pérenniser nos biais.&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;L'ordinateur a appris à partir des humains comment discriminer, et il a fait le travail avec une efficacité à couper le souffle&lt;/p&gt;
-&lt;cite&gt;- Cathy O'Neil &lt;a href=&quot;https://weaponsofmathdestructionbook.com/&quot;&gt;« Weapons of Math Destruction »&lt;/a&gt;&lt;/cite&gt;
+&lt;p&gt;L&apos;ordinateur a appris à partir des humains comment discriminer, et il a fait le travail avec une efficacité à couper le souffle&lt;/p&gt;
+&lt;cite&gt;- Cathy O&apos;Neil &lt;a href=&quot;https://weaponsofmathdestructionbook.com/&quot;&gt;« Weapons of Math Destruction »&lt;/a&gt;&lt;/cite&gt;
 &lt;/blockquote&gt;
 
 &lt;h2 id=&quot;une-ia-peut-elle-discriminer-&quot;&gt;Une IA peut-elle discriminer ?&lt;/h2&gt;
@@ -114,7 +114,7 @@
 &lt;p&gt;Tant que le parcours qui mène une IA à prendre une décision ne soit pas auditable, aucune partie prenante n’acceptera la responsabilité de ses effets nocifs. Tant que le fonctionnement d’un algorithme ne soit pas explicable, les ajustements nécessaires pour contrer les préjugés ne pourront pas s’effectuer. Malheureusement, la transparence est loin d’être la règle aujourd’hui.&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;George Akerlof a montré que si un marché devenait opaque, il risquait de s'effondrer. C'est ce qui pourrait arriver à l'IA si on ne parvient pas à lui injecter plus de transparence.&lt;/p&gt;
+&lt;p&gt;George Akerlof a montré que si un marché devenait opaque, il risquait de s&apos;effondrer. C&apos;est ce qui pourrait arriver à l&apos;IA si on ne parvient pas à lui injecter plus de transparence.&lt;/p&gt;
 &lt;cite&gt;- Patrick Waelbroeck, professeur à Télécom ParisTech&lt;/cite&gt;
 &lt;/blockquote&gt;
 
@@ -158,7 +158,7 @@
 &lt;p&gt;
 Les pouvoirs publics doivent être en mesure de tester et de certifier les données utilisées par les algorithmes pour garantir le respect des droits fondamentaux, notamment la non-discrimination.
 &lt;/p&gt;
-&lt;cite&gt;- &lt;a href=&quot;https://ec.europa.eu/info/sites/info/files/commission-white-paper-artificial-intelligence-feb2020_fr.pdf&quot;&gt;Livre blanc&lt;/a&gt; de la Commission Européenne sur l'intelligence artificielle&lt;/cite&gt;
+&lt;cite&gt;- &lt;a href=&quot;https://ec.europa.eu/info/sites/info/files/commission-white-paper-artificial-intelligence-feb2020_fr.pdf&quot;&gt;Livre blanc&lt;/a&gt; de la Commission Européenne sur l&apos;intelligence artificielle&lt;/cite&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;Cette réglementation s’ajoutera au Règlement Européen sur la Protection des données à caractère personnel (&lt;a href=&quot;https://www.cnil.fr/fr/reglement-europeen-protection-donnees&quot;&gt;RGPD&lt;/a&gt;), ainsi que la loi Informatique et Libertés (&lt;a href=&quot;https://www.cnil.fr/fr/la-loi-informatique-et-libertes&quot;&gt;LIL&lt;/a&gt;). Ces lois européennes imposent déjà des restrictions telles que le principe de minimisation (les données personnelles doivent se limiter à ce qui est strictement nécessaire) et ceux d’explicabilité et d’intelligibilité des algorithmes.&lt;/p&gt;
@@ -193,7 +193,7 @@ Les pouvoirs publics doivent être en mesure de tester et de certifier les donn�
       
 
       
-        <summary type="html">Cette nouvelle technologie devenue omniprésente renforce nos préjugés. Comment ne pas pérenniser nos déviations de jugement ?</summary>
+        <summary type="html">Cette technologie devenue omniprésente renforce nos préjugés. Comment ne pas pérenniser nos déviations de jugement ?</summary>
       
 
       

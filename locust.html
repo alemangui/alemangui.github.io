@@ -183,11 +183,6 @@ into the {body} of the default.hbs template -->
                 <h1 class="post-full-title">Mesurer la performance avec Locust</h1>
             </header>
 
-            
-            <figure class="post-full-image" style="background-image: url(/assets/images/chrono.jpg)">
-            </figure>
-            
-
             <section class="post-full-content">
                 <div class="kg-card-markdown">
                     <p>Toute application doit pouvoir répondre à un certain nombre de requêtes sous un temps minimum jugé comme acceptable. Ceci peut varier énormément. Google fait face à des millions d’utilisateurs et se fixe des objectifs de performance très ambitieux. D’un autre côté, un système de gestion d’inventaires d’une petite épicerie difficilement aura plus d’une poignée d’utilisateurs et n’aura pas les mêmes contraintes de temps de réponse.</p>
@@ -198,22 +193,22 @@ into the {body} of the default.hbs template -->
 
 <p>Avant de jouer avec Locust, il faut bien qu’on ait quelque chose à tester. Pour le fun, nous allons faire un hello-world avec Flask.</p>
 
-<p>Je vais d’abord démarrer un environnement virtuel avec Python 3 dans un dossier vide, suivi de l’installation de Flask avec <code class="highlighter-rouge">pip</code> :</p>
+<p>Je vais d’abord démarrer un environnement virtuel avec Python 3 dans un dossier vide, suivi de l’installation de Flask avec <code class="language-plaintext highlighter-rouge">pip</code> :</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">» virtualenv <span class="nt">-p</span> python3 venv
 » <span class="nb">.</span> venv/bin/activate
-» pip install flask</code></pre></figure>
+» pip <span class="nb">install </span>flask</code></pre></figure>
 
-<p>Créons maintenant un fichier <code class="highlighter-rouge">hello.py</code> avec le code disponible dans le <a href="https://flask.palletsprojects.com/en/1.1.x/quickstart/#a-minimal-application">site Flask</a>.</p>
+<p>Créons maintenant un fichier <code class="language-plaintext highlighter-rouge">hello.py</code> avec le code disponible dans le <a href="https://flask.palletsprojects.com/en/1.1.x/quickstart/#a-minimal-application">site Flask</a>.</p>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
 <span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
 
-<span class="nd">@app.route</span><span class="p">(</span><span class="s">'/'</span><span class="p">)</span>
+<span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/'</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">hello_world</span><span class="p">():</span>
     <span class="k">return</span> <span class="s">'Hello, World!'</span></code></pre></figure>
 
-<p>Et voilà, nous avons un endpoint sur <code class="highlighter-rouge">http://127.0.0.1:5000/</code>.</p>
+<p>Et voilà, nous avons un endpoint sur <code class="language-plaintext highlighter-rouge">http://127.0.0.1:5000/</code>.</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">» <span class="nb">export </span><span class="nv">FLASK_APP</span><span class="o">=</span>hello.py<span class="p">;</span> flask run
   <span class="k">*</span> Serving Flask app <span class="s2">"hello.py"</span>
@@ -224,30 +219,30 @@ into the {body} of the default.hbs template -->
 
 <p>Locust permet de simuler de milliers d’utilisateurs simultanés sur notre app. Derrière le rideau, il crée un processus léger via gevent (plus précisément un <a href="http://www.gevent.org/api/gevent.greenlet.html">greenlet</a>) par utilisateur simulé. Ce choix technique permet de simuler un grand nombre d’usagers sur une seule machine.</p>
 
-<p>Commençons par créer un fichier <code class="highlighter-rouge">locustfile.py</code>. Ce fichier servira pour décrire les tests de charge.</p>
+<p>Commençons par créer un fichier <code class="language-plaintext highlighter-rouge">locustfile.py</code>. Ce fichier servira pour décrire les tests de charge.</p>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">locust</span> <span class="kn">import</span> <span class="n">HttpLocust</span><span class="p">,</span> <span class="n">TaskSet</span><span class="p">,</span> <span class="n">task</span><span class="p">,</span> <span class="n">between</span>
 
 <span class="k">class</span> <span class="nc">UserBehaviour</span><span class="p">(</span><span class="n">TaskSet</span><span class="p">):</span>
-    <span class="nd">@task</span>
+    <span class="o">@</span><span class="n">task</span>
     <span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"/"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">client</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"/"</span><span class="p">)</span>
 
 <span class="k">class</span> <span class="nc">WebsiteUser</span><span class="p">(</span><span class="n">HttpLocust</span><span class="p">):</span>
     <span class="n">task_set</span> <span class="o">=</span> <span class="n">UserBehaviour</span>
     <span class="n">wait_time</span> <span class="o">=</span> <span class="n">between</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span></code></pre></figure>
 
-<p>La class <code class="highlighter-rouge">UserBehaviour</code> nous permet de définir l’activité que les usagers vont mener. Dans notre cas il y a un seul et unique endpoint à la racine qu’on represente ici avec la fonction <code class="highlighter-rouge">index</code> décoré avec <code class="highlighter-rouge">@task</code> pour indiquer à Locust qu’il s’agit d’une tâche que les utilisateurs vont effectuer.</p>
+<p>La class <code class="language-plaintext highlighter-rouge">UserBehaviour</code> nous permet de définir l’activité que les usagers vont mener. Dans notre cas il y a un seul et unique endpoint à la racine qu’on represente ici avec la fonction <code class="language-plaintext highlighter-rouge">index</code> décoré avec <code class="language-plaintext highlighter-rouge">@task</code> pour indiquer à Locust qu’il s’agit d’une tâche que les utilisateurs vont effectuer.</p>
 
-<p>La class <code class="highlighter-rouge">WebsiteUser</code> represente l’utilisateur lui même. On spécifie la <code class="highlighter-rouge">task_set</code> qu’il réalisera ainsi que le temps qu’il attend entre chaque tâche - entre cinq et neuf secondes dans notre cas.</p>
+<p>La class <code class="language-plaintext highlighter-rouge">WebsiteUser</code> represente l’utilisateur lui même. On spécifie la <code class="language-plaintext highlighter-rouge">task_set</code> qu’il réalisera ainsi que le temps qu’il attend entre chaque tâche - entre cinq et neuf secondes dans notre cas.</p>
 
-<p>Si vous avez nommé ce fichier <code class="highlighter-rouge">locustfile.py</code> il suffit de taper <code class="highlighter-rouge">locust</code> dans la console pour tout démarrer. Si vous l’avez nommé différemment il faudra ajouter <code class="highlighter-rouge">-f &lt;&lt;path-to-file&gt;&gt;</code></p>
+<p>Si vous avez nommé ce fichier <code class="language-plaintext highlighter-rouge">locustfile.py</code> il suffit de taper <code class="language-plaintext highlighter-rouge">locust</code> dans la console pour tout démarrer. Si vous l’avez nommé différemment il faudra ajouter <code class="language-plaintext highlighter-rouge">-f &lt;&lt;path-to-file&gt;&gt;</code></p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">» locust
-   <span class="o">[</span>&lt;date&gt;] /INFO/locust.main: Starting web monitor at http://<span class="k">*</span>:8089
-   <span class="o">[</span>&lt;date&gt;] /INFO/locust.main: Starting Locust 0.14.4</code></pre></figure>
+   <span class="o">[</span>&lt;<span class="nb">date</span><span class="o">&gt;]</span> /INFO/locust.main: Starting web monitor at http://<span class="k">*</span>:8089
+   <span class="o">[</span>&lt;<span class="nb">date</span><span class="o">&gt;]</span> /INFO/locust.main: Starting Locust 0.14.4</code></pre></figure>
 
-<p>Locust a mis en place l’interface web sur <code class="highlighter-rouge">http://localhost:8089</code>. Cette interface nous permet de spécifier le nombre d’usagers à simuler, le taux de création de ces utilisateurs et l’URL de l’application à tester. Démarrons nos tests avec 100 utilisateurs avec un taux de croissance de dix par seconde. Vu que notre hello-world Flask tourne toujours sur le port <code class="highlighter-rouge">:5000</code> on peut le remplir comme cela :</p>
+<p>Locust a mis en place l’interface web sur <code class="language-plaintext highlighter-rouge">http://localhost:8089</code>. Cette interface nous permet de spécifier le nombre d’usagers à simuler, le taux de création de ces utilisateurs et l’URL de l’application à tester. Démarrons nos tests avec 100 utilisateurs avec un taux de croissance de dix par seconde. Vu que notre hello-world Flask tourne toujours sur le port <code class="language-plaintext highlighter-rouge">:5000</code> on peut le remplir comme cela :</p>
 
 <p><img src="assets/images/locust-1.jpg" /></p>
 
@@ -264,74 +259,74 @@ into the {body} of the default.hbs template -->
 
 <h2 id="plus-dendpoints">Plus d’endpoints</h2>
 
-<p>Dans la vie réelle on voudra tester des applications qui ont plus d’un endpoint. Par exemple, on peut avoir de comptes utilisateur (et donc un <code class="highlighter-rouge">/login</code> et <code class="highlighter-rouge">/logout</code>). Puis on pourrait aussi mettre à disposition un endpoint pour paramétrer le compte (<code class="highlighter-rouge">/account</code>) ainsi qu’un autre pour accéder au panier d’achat (<code class="highlighter-rouge">/cart</code>).</p>
+<p>Dans la vie réelle on voudra tester des applications qui ont plus d’un endpoint. Par exemple, on peut avoir de comptes utilisateur (et donc un <code class="language-plaintext highlighter-rouge">/login</code> et <code class="language-plaintext highlighter-rouge">/logout</code>). Puis on pourrait aussi mettre à disposition un endpoint pour paramétrer le compte (<code class="language-plaintext highlighter-rouge">/account</code>) ainsi qu’un autre pour accéder au panier d’achat (<code class="language-plaintext highlighter-rouge">/cart</code>).</p>
 
-<p>Ajoutons ces nouvelles routes à notre app Flask sur <code class="highlighter-rouge">hello.py</code> :</p>
+<p>Ajoutons ces nouvelles routes à notre app Flask sur <code class="language-plaintext highlighter-rouge">hello.py</code> :</p>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
 <span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
 
-<span class="nd">@app.route</span><span class="p">(</span><span class="s">'/'</span><span class="p">)</span>
+<span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/'</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">home</span><span class="p">():</span>
     <span class="k">return</span> <span class="s">'Home'</span>
 
-<span class="nd">@app.route</span><span class="p">(</span><span class="s">'/login'</span><span class="p">)</span>
+<span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/login'</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">home</span><span class="p">():</span>
     <span class="k">return</span> <span class="s">'Login'</span>
 
-<span class="nd">@app.route</span><span class="p">(</span><span class="s">'/logout'</span><span class="p">)</span>
+<span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/logout'</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">home</span><span class="p">():</span>
     <span class="k">return</span> <span class="s">'Logout'</span>
 
-<span class="nd">@app.route</span><span class="p">(</span><span class="s">'/account'</span><span class="p">)</span>
+<span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/account'</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">home</span><span class="p">():</span>
     <span class="k">return</span> <span class="s">'Account'</span>
 
-<span class="nd">@app.route</span><span class="p">(</span><span class="s">'/cart'</span><span class="p">)</span>
+<span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/cart'</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">home</span><span class="p">():</span>
     <span class="k">return</span> <span class="s">'Cart'</span></code></pre></figure>
 
 <h3 id="authentification">Authentification</h3>
 
-<p>Cette fois-ci nos utilisateurs doivent s’identifier avant d’accéder aux autres pages. De plus, ils fermeront leur session après avoir fini. Les fonctions <code class="highlighter-rouge">on_start</code> et <code class="highlighter-rouge">on_stop</code> sont appelées avant l’exécution de la première tâche et après la fin du TaskSet respectivement. C’est donc idéal pour placer l’authentification :</p>
+<p>Cette fois-ci nos utilisateurs doivent s’identifier avant d’accéder aux autres pages. De plus, ils fermeront leur session après avoir fini. Les fonctions <code class="language-plaintext highlighter-rouge">on_start</code> et <code class="language-plaintext highlighter-rouge">on_stop</code> sont appelées avant l’exécution de la première tâche et après la fin du TaskSet respectivement. C’est donc idéal pour placer l’authentification :</p>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">...</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="p">...</span>
 <span class="k">class</span> <span class="nc">UserBehaviour</span><span class="p">(</span><span class="n">TaskSet</span><span class="p">):</span>
 
     <span class="k">def</span> <span class="nf">on_start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'/login'</span><span class="p">)</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">client</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'/login'</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">on_stop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'/logout'</span><span class="p">)</span>
-<span class="o">...</span></code></pre></figure>
+        <span class="bp">self</span><span class="p">.</span><span class="n">client</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'/logout'</span><span class="p">)</span>
+<span class="p">...</span></code></pre></figure>
 
 <h3 id="comportement-des-usagers">Comportement des usagers</h3>
 
-<p>Vu le nombre des pages dans notre app, ce serait utile de paramétrer <code class="highlighter-rouge">UserBehaviour</code> pour que les pages ne soient pas toutes visitées pareil. Nous pouvons nous attendre à que la page d’accueil (<code class="highlighter-rouge">/</code>) soit souvent visité. D’un autre côté, du fait que les utilisateurs ne paramètrent pas leur compte tous les jours, <code class="highlighter-rouge">/account</code> ne sera pas un passage obligé pour tous. Finalement, le panier d’achat (<code class="highlighter-rouge">/cart</code>) se situe un peu au milieu en terme d’affluence.</p>
+<p>Vu le nombre des pages dans notre app, ce serait utile de paramétrer <code class="language-plaintext highlighter-rouge">UserBehaviour</code> pour que les pages ne soient pas toutes visitées pareil. Nous pouvons nous attendre à que la page d’accueil (<code class="language-plaintext highlighter-rouge">/</code>) soit souvent visité. D’un autre côté, du fait que les utilisateurs ne paramètrent pas leur compte tous les jours, <code class="language-plaintext highlighter-rouge">/account</code> ne sera pas un passage obligé pour tous. Finalement, le panier d’achat (<code class="language-plaintext highlighter-rouge">/cart</code>) se situe un peu au milieu en terme d’affluence.</p>
 
-<p>Pour ce faire on s’appuiera sur le décorateur <code class="highlighter-rouge">@task</code>, plus précisément sur son paramètre facultatif entier qui répresente le poids, çad la probabilité qu’un utilisateur choisisse la tâche en question pour son action suivante. Une tâche <code class="highlighter-rouge">@task(10)</code> a dix fois plus de probabilité d’être choisie qu’une tâche <code class="highlighter-rouge">@task(1)</code>. Nous pouvons donc récrire notre <code class="highlighter-rouge">locustfile.py</code> de la façon suivante :</p>
+<p>Pour ce faire on s’appuiera sur le décorateur <code class="language-plaintext highlighter-rouge">@task</code>, plus précisément sur son paramètre facultatif entier qui répresente le poids, çad la probabilité qu’un utilisateur choisisse la tâche en question pour son action suivante. Une tâche <code class="language-plaintext highlighter-rouge">@task(10)</code> a dix fois plus de probabilité d’être choisie qu’une tâche <code class="language-plaintext highlighter-rouge">@task(1)</code>. Nous pouvons donc récrire notre <code class="language-plaintext highlighter-rouge">locustfile.py</code> de la façon suivante :</p>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">locust</span> <span class="kn">import</span> <span class="n">HttpLocust</span><span class="p">,</span> <span class="n">TaskSet</span><span class="p">,</span> <span class="n">task</span><span class="p">,</span> <span class="n">between</span>
 
 <span class="k">class</span> <span class="nc">UserBehaviour</span><span class="p">(</span><span class="n">TaskSet</span><span class="p">):</span>
 
     <span class="k">def</span> <span class="nf">on_start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'/login'</span><span class="p">)</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">client</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'/login'</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">on_stop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'/logout'</span><span class="p">)</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">client</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'/logout'</span><span class="p">)</span>
 
-    <span class="nd">@task</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+    <span class="o">@</span><span class="n">task</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
     <span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"/"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">client</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"/"</span><span class="p">)</span>
 
-    <span class="nd">@task</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <span class="o">@</span><span class="n">task</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
     <span class="k">def</span> <span class="nf">cart</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"/cart"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">client</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"/cart"</span><span class="p">)</span>
 
-    <span class="nd">@task</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="o">@</span><span class="n">task</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
     <span class="k">def</span> <span class="nf">account</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"/account"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">client</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"/account"</span><span class="p">)</span>
 
 <span class="k">class</span> <span class="nc">WebsiteUser</span><span class="p">(</span><span class="n">HttpLocust</span><span class="p">):</span>
     <span class="n">task_set</span> <span class="o">=</span> <span class="n">UserBehaviour</span>
@@ -345,7 +340,7 @@ into the {body} of the default.hbs template -->
 
 <h2 id="locust-en-mode-distribuée">Locust en mode distribuée</h2>
 
-<p>Si nos besoins de simulation sont trop importants pour être faits sur une seule machine, Locust permet d’exécuter les tests de façon distribuée. Il suffit de créer une instance Locust <em>master</em> (avec l’option <code class="highlighter-rouge">-master</code>) à laquelle on ajoutera des noeuds créés avec l’option <code class="highlighter-rouge">slave</code> et <code class="highlighter-rouge">---master-host</code> pour indiquer où se trouve l’instance maître.</p>
+<p>Si nos besoins de simulation sont trop importants pour être faits sur une seule machine, Locust permet d’exécuter les tests de façon distribuée. Il suffit de créer une instance Locust <em>master</em> (avec l’option <code class="language-plaintext highlighter-rouge">-master</code>) à laquelle on ajoutera des noeuds créés avec l’option <code class="language-plaintext highlighter-rouge">slave</code> et <code class="language-plaintext highlighter-rouge">---master-host</code> pour indiquer où se trouve l’instance maître.</p>
 
 <p>Sur une machine on ferait :</p>
 
@@ -434,6 +429,8 @@ into the {body} of the default.hbs template -->
                         <div class="read-next-card-content">
                             <ul>
                                 
+                                
+                                  
                                 
                                   
                                 
@@ -616,7 +613,7 @@ into the {body} of the default.hbs template -->
         <!-- The footer at the very bottom of the screen -->
         <footer class="site-footer outer">
             <div class="site-footer-content inner">
-                <section class="copyright"><a href="http://alemangui.github.io/">Alejandro Mantecón Guillén</a> &copy; 2020</section>
+                <section class="copyright"><a href="http://alemangui.github.io/">Alejandro Mantecón Guillén</a> &copy; 2026</section>
 
                 <nav class="site-footer-nav">
                     

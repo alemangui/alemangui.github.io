@@ -180,11 +180,6 @@ into the {body} of the default.hbs template -->
                 <h1 class="post-full-title">Web Audio: the ugly click and the human ear</h1>
             </header>
 
-            
-            <figure class="post-full-image" style="background-image: url(/assets/images/mixer.jpg)">
-            </figure>
-            
-
             <section class="post-full-content">
                 <div class="kg-card-markdown">
                     <style>
@@ -316,22 +311,22 @@ into the {body} of the default.hbs template -->
 
 <h3 id="exponentialramptovalueattime-vs-settargetattime">exponentialRampToValueAtTime vs setTargetAtTime</h3>
 
-<p>We will choose and exponential way of gradually decreasing the gain. This leaves us with <code class="highlighter-rouge">exponentialRampToValueAtTime</code> vs <code class="highlighter-rouge">setTargetAtTime</code>. Some difference between them are:</p>
+<p>We will choose and exponential way of gradually decreasing the gain. This leaves us with <code class="language-plaintext highlighter-rouge">exponentialRampToValueAtTime</code> vs <code class="language-plaintext highlighter-rouge">setTargetAtTime</code>. Some difference between them are:</p>
 
 <ul>
   <li>
-    <p><code class="highlighter-rouge">exponentialRampToValueAtTime</code> will get to the value precisely at the time specified. However, using this function, an exponential ramp to zero <a href="https://webaudio.github.io/web-audio-api/#widl-AudioParam-exponentialRampToValueAtTime-AudioParam-float-value-double-endTime">is not possible</a> because of the math used to calculate the values over time.</p>
+    <p><code class="language-plaintext highlighter-rouge">exponentialRampToValueAtTime</code> will get to the value precisely at the time specified. However, using this function, an exponential ramp to zero <a href="https://webaudio.github.io/web-audio-api/#widl-AudioParam-exponentialRampToValueAtTime-AudioParam-float-value-double-endTime">is not possible</a> because of the math used to calculate the values over time.</p>
   </li>
   <li>
-    <p><code class="highlighter-rouge">setTargetAtTime</code> exponentially moves towards the value given by the target parameter, but instead of specifying an end time, we give the function an exponential decay rate after which the value will decrease about 2/3rds. This means we can ask the function to go all the way down to zero. Theoretically it will never really reach zero since it will be exponentially decaying, but in real life it <em>will</em> as soon as the value is too small to be represented with a float.</p>
+    <p><code class="language-plaintext highlighter-rouge">setTargetAtTime</code> exponentially moves towards the value given by the target parameter, but instead of specifying an end time, we give the function an exponential decay rate after which the value will decrease about 2/3rds. This means we can ask the function to go all the way down to zero. Theoretically it will never really reach zero since it will be exponentially decaying, but in real life it <em>will</em> as soon as the value is too small to be represented with a float.</p>
   </li>
 </ul>
 
-<p>Let’s choose <code class="highlighter-rouge">setTargetAtTime</code> because we want to go all the way down to zero and because we are not too worried about getting there at a super precise time. As long as the fade-out time is fast enough to be imperceptible but slow enough to remove the click, we will be happy.</p>
+<p>Let’s choose <code class="language-plaintext highlighter-rouge">setTargetAtTime</code> because we want to go all the way down to zero and because we are not too worried about getting there at a super precise time. As long as the fade-out time is fast enough to be imperceptible but slow enough to remove the click, we will be happy.</p>
 
 <h3 id="using-settargetattime-to-remove-the-click">Using setTargetAtTime to remove the click</h3>
 
-<p>Before trying out <code class="highlighter-rouge">setTargetAtTime</code> to get rid of the ugly click, we must be of a couple gotchas:</p>
+<p>Before trying out <code class="language-plaintext highlighter-rouge">setTargetAtTime</code> to get rid of the ugly click, we must be of a couple gotchas:</p>
 
 <ul>
   <li>We must choose a decay time after which the gain value will decrease about 2/3rds. After a bit of experimenting, I found out that a decay time of 15 milliseconds gives the impression of being immediate but at the same time removes the click. Remember: Web Audio uses seconds instead of milliseconds!</li>
@@ -345,7 +340,7 @@ into the {body} of the default.hbs template -->
 <span class="nx">gainNode</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">destination</span><span class="p">)</span>
 <span class="nx">oscillator</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
 
-<span class="nx">stopButton</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'click'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<span class="nx">stopButton</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">gainNode</span><span class="p">.</span><span class="nx">gain</span><span class="p">.</span><span class="nx">setTargetAtTime</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">context</span><span class="p">.</span><span class="nx">currentTime</span><span class="p">,</span> <span class="mf">0.015</span><span class="p">);</span>
 <span class="p">});</span></code></pre></figure>
 
@@ -379,7 +374,7 @@ into the {body} of the default.hbs template -->
 
 <h3 id="using-exponentialramptovalueattime-to-remove-the-click">Using exponentialRampToValueAtTime to remove the click</h3>
 
-<p>Since we are at it, let’s see how it would’ve turned out using <code class="highlighter-rouge">exponentialRampToValueAtTime</code> - which I found to be a bit trickier.</p>
+<p>Since we are at it, let’s see how it would’ve turned out using <code class="language-plaintext highlighter-rouge">exponentialRampToValueAtTime</code> - which I found to be a bit trickier.</p>
 
 <p>One gotcha is this part of the Web Audio specification:</p>
 
@@ -387,7 +382,7 @@ into the {body} of the default.hbs template -->
   <p>(exponentialRampToValueAtTime) Schedules an exponential continuous change in parameter value <strong>from the previous scheduled parameter value</strong> to the given value.</p>
 </blockquote>
 
-<p><em>From the previous scheduled parameter value</em> means that you must first set the audioParam with an automation method before using the ramping function. This usually means using <code class="highlighter-rouge">setValueAtTime()</code> instead of setting the audioParam value directly (in other words, don’t do this: <code class="highlighter-rouge">gainNode.gain.value = someValue</code>).</p>
+<p><em>From the previous scheduled parameter value</em> means that you must first set the audioParam with an automation method before using the ramping function. This usually means using <code class="language-plaintext highlighter-rouge">setValueAtTime()</code> instead of setting the audioParam value directly (in other words, don’t do this: <code class="language-plaintext highlighter-rouge">gainNode.gain.value = someValue</code>).</p>
 
 <p>Another gotcha also described in the spec:</p>
 
@@ -395,7 +390,7 @@ into the {body} of the default.hbs template -->
   <p>It is an error if either V0 or V1 is not strictly positive. This also implies <strong>an exponential ramp to 0 is not possible.</strong></p>
 </blockquote>
 
-<p>So we must choose a tiny value, but not zero. As mentioned earlier, we can’t ramp to zero. Also, this time we will use 30 milliseconds as the time for the ramp to occur (this is the total transition time, not the decay time used in <code class="highlighter-rouge">setTargetAtTime</code>).</p>
+<p>So we must choose a tiny value, but not zero. As mentioned earlier, we can’t ramp to zero. Also, this time we will use 30 milliseconds as the time for the ramp to occur (this is the total transition time, not the decay time used in <code class="language-plaintext highlighter-rouge">setTargetAtTime</code>).</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">context</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AudioContext</span><span class="p">();</span>
 <span class="kd">var</span> <span class="nx">oscillator</span> <span class="o">=</span> <span class="nx">context</span><span class="p">.</span><span class="nx">createOscillator</span><span class="p">();</span>
@@ -406,7 +401,7 @@ into the {body} of the default.hbs template -->
 
 <span class="nx">oscillator</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
 
-<span class="nx">stopButton</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'click'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<span class="nx">stopButton</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
 
     <span class="c1">// Important! Setting a scheduled parameter value</span>
     <span class="nx">gainNode</span><span class="p">.</span><span class="nx">gain</span><span class="p">.</span><span class="nx">setValueAtTime</span><span class="p">(</span><span class="nx">gainNode</span><span class="p">.</span><span class="nx">gain</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span> <span class="nx">context</span><span class="p">.</span><span class="nx">currentTime</span><span class="p">);</span> 
@@ -608,7 +603,7 @@ into the {body} of the default.hbs template -->
         <!-- The footer at the very bottom of the screen -->
         <footer class="site-footer outer">
             <div class="site-footer-content inner">
-                <section class="copyright"><a href="http://alemangui.github.io/">Alejandro Mantecón Guillén</a> &copy; 2020</section>
+                <section class="copyright"><a href="http://alemangui.github.io/">Alejandro Mantecón Guillén</a> &copy; 2026</section>
 
                 <nav class="site-footer-nav">
                     

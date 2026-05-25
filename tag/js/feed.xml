@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <feed xmlns="http://www.w3.org/2005/Atom" >
-  <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
+  <generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator>
   <link href="http://alemangui.github.io/tag/js/feed.xml" rel="self" type="application/atom+xml" />
   <link href="http://alemangui.github.io/" rel="alternate" type="text/html" />
-  <updated>2020-08-21T10:11:07+02:00</updated>
+  <updated>2026-05-25T11:46:45+02:00</updated>
   <id>http://alemangui.github.io/tag/js/feed.xml</id>
 
   
@@ -16,7 +16,7 @@
   
 
   
-    <subtitle>Le blog d'Alejandro Mantecón Guillén</subtitle>
+    <subtitle>Le blog d&apos;Alejandro Mantecón Guillén</subtitle>
   
 
   
@@ -47,7 +47,7 @@
 
 &lt;p&gt;&lt;img src=&quot;assets/images/failed-build.jpg&quot; /&gt;&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Chrome 80.0.3987 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Linux 0.0.0&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; Sound actions should trigger &lt;span class=&quot;s1&quot;&gt;'end'&lt;/span&gt; when buffer ended FAILED
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Chrome 80.0.3987 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Linux 0.0.0&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; Sound actions should trigger &lt;span class=&quot;s1&quot;&gt;&apos;end&apos;&lt;/span&gt; when buffer ended FAILED
 	Expected spy endCallback to have been called.
 	    at tests/Sound.test.js:270:26
 
@@ -65,16 +65,16 @@ Chrome 80.0.3987 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Linux 0.0.0&lt;sp
 
 &lt;p&gt;Heureusement, on peut lancer Chrome avec une option spéciale pour lui demander de désactiver cette politique :&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Chrome &lt;span class=&quot;nt&quot;&gt;--autoplay-policy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;no-user-gesture-required&lt;span class=&quot;s1&quot;&gt;'&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Chrome &lt;span class=&quot;nt&quot;&gt;--autoplay-policy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;no-user-gesture-required&lt;span class=&quot;s1&quot;&gt;&apos;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Pour intégrer ceci dans Pizzicato, il suffit de modifier le &lt;a href=&quot;https://github.com/alemangui/pizzicato/blob/master/karma.conf.js&quot;&gt;fichier de configuration de Karma&lt;/a&gt;. Au moment de définir les &lt;code class=&quot;highlighter-rouge&quot;&gt;customLaunchers&lt;/code&gt; nous pouvons aussi profiter pour passer des arguments additionnels.&lt;/p&gt;
+&lt;p&gt;Pour intégrer ceci dans Pizzicato, il suffit de modifier le &lt;a href=&quot;https://github.com/alemangui/pizzicato/blob/master/karma.conf.js&quot;&gt;fichier de configuration de Karma&lt;/a&gt;. Au moment de définir les &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;customLaunchers&lt;/code&gt; nous pouvons aussi profiter pour passer des arguments additionnels.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;customLaunchers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;nl&quot;&gt;Chrome_travis_ci&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nl&quot;&gt;base&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Chrome'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;flags&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-            &lt;span class=&quot;s1&quot;&gt;'--no-sandbox'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-            &lt;span class=&quot;s1&quot;&gt;'--autoplay-policy=no-user-gesture-required'&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;base&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;Chrome&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;flags&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+            &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;--no-sandbox&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;--autoplay-policy=no-user-gesture-required&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;
         &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
@@ -149,7 +149,7 @@ Chrome 80.0.3987 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Linux 0.0.0&lt;sp
       
 
       
-        <summary type="html">Les navigateurs implémentent des fonctionnalités permettant de bloquer le contenu audio qui démarre automatiquement. Comment s'en sortir en tant que développeur ?</summary>
+        <summary type="html">Les navigateurs implémentent des fonctionnalités permettant de bloquer le contenu audio qui démarre automatiquement. Comment s&apos;en sortir en tant que développeur ?</summary>
       
 
       
@@ -235,14 +235,14 @@ Chrome 80.0.3987 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Linux 0.0.0&lt;sp
 	var oscillator;
 	var firstIsPlaying;
 	(function() {
-		document.getElementById('1-play-button').addEventListener('click', function() {
+		document.getElementById(&apos;1-play-button&apos;).addEventListener(&apos;click&apos;, function() {
 			if(firstIsPlaying) return;
 			oscillator = context.createOscillator();
 			oscillator.connect(context.destination);
 			oscillator.start();
 			firstIsPlaying = true;
 		}, false);
-		document.getElementById('1-stop-button').addEventListener('click', function() {
+		document.getElementById(&apos;1-stop-button&apos;).addEventListener(&apos;click&apos;, function() {
 			if (!firstIsPlaying) return;
 			oscillator.stop();
 			firstIsPlaying = false;
@@ -291,22 +291,22 @@ Chrome 80.0.3987 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Linux 0.0.0&lt;sp
 
 &lt;h3 id=&quot;exponentialramptovalueattime-vs-settargetattime&quot;&gt;exponentialRampToValueAtTime vs setTargetAtTime&lt;/h3&gt;
 
-&lt;p&gt;We will choose and exponential way of gradually decreasing the gain. This leaves us with &lt;code class=&quot;highlighter-rouge&quot;&gt;exponentialRampToValueAtTime&lt;/code&gt; vs &lt;code class=&quot;highlighter-rouge&quot;&gt;setTargetAtTime&lt;/code&gt;. Some difference between them are:&lt;/p&gt;
+&lt;p&gt;We will choose and exponential way of gradually decreasing the gain. This leaves us with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;exponentialRampToValueAtTime&lt;/code&gt; vs &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;setTargetAtTime&lt;/code&gt;. Some difference between them are:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;exponentialRampToValueAtTime&lt;/code&gt; will get to the value precisely at the time specified. However, using this function, an exponential ramp to zero &lt;a href=&quot;https://webaudio.github.io/web-audio-api/#widl-AudioParam-exponentialRampToValueAtTime-AudioParam-float-value-double-endTime&quot;&gt;is not possible&lt;/a&gt; because of the math used to calculate the values over time.&lt;/p&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;exponentialRampToValueAtTime&lt;/code&gt; will get to the value precisely at the time specified. However, using this function, an exponential ramp to zero &lt;a href=&quot;https://webaudio.github.io/web-audio-api/#widl-AudioParam-exponentialRampToValueAtTime-AudioParam-float-value-double-endTime&quot;&gt;is not possible&lt;/a&gt; because of the math used to calculate the values over time.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;setTargetAtTime&lt;/code&gt; exponentially moves towards the value given by the target parameter, but instead of specifying an end time, we give the function an exponential decay rate after which the value will decrease about 2/3rds. This means we can ask the function to go all the way down to zero. Theoretically it will never really reach zero since it will be exponentially decaying, but in real life it &lt;em&gt;will&lt;/em&gt; as soon as the value is too small to be represented with a float.&lt;/p&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;setTargetAtTime&lt;/code&gt; exponentially moves towards the value given by the target parameter, but instead of specifying an end time, we give the function an exponential decay rate after which the value will decrease about 2/3rds. This means we can ask the function to go all the way down to zero. Theoretically it will never really reach zero since it will be exponentially decaying, but in real life it &lt;em&gt;will&lt;/em&gt; as soon as the value is too small to be represented with a float.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Let’s choose &lt;code class=&quot;highlighter-rouge&quot;&gt;setTargetAtTime&lt;/code&gt; because we want to go all the way down to zero and because we are not too worried about getting there at a super precise time. As long as the fade-out time is fast enough to be imperceptible but slow enough to remove the click, we will be happy.&lt;/p&gt;
+&lt;p&gt;Let’s choose &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;setTargetAtTime&lt;/code&gt; because we want to go all the way down to zero and because we are not too worried about getting there at a super precise time. As long as the fade-out time is fast enough to be imperceptible but slow enough to remove the click, we will be happy.&lt;/p&gt;
 
 &lt;h3 id=&quot;using-settargetattime-to-remove-the-click&quot;&gt;Using setTargetAtTime to remove the click&lt;/h3&gt;
 
-&lt;p&gt;Before trying out &lt;code class=&quot;highlighter-rouge&quot;&gt;setTargetAtTime&lt;/code&gt; to get rid of the ugly click, we must be of a couple gotchas:&lt;/p&gt;
+&lt;p&gt;Before trying out &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;setTargetAtTime&lt;/code&gt; to get rid of the ugly click, we must be of a couple gotchas:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;We must choose a decay time after which the gain value will decrease about 2/3rds. After a bit of experimenting, I found out that a decay time of 15 milliseconds gives the impression of being immediate but at the same time removes the click. Remember: Web Audio uses seconds instead of milliseconds!&lt;/li&gt;
@@ -320,7 +320,7 @@ Chrome 80.0.3987 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Linux 0.0.0&lt;sp
 &lt;span class=&quot;nx&quot;&gt;gainNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;connect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;destination&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;nx&quot;&gt;oscillator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
 
-&lt;span class=&quot;nx&quot;&gt;stopButton&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'click'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;stopButton&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;click&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;nx&quot;&gt;gainNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;gain&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setTargetAtTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;currentTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.015&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
@@ -330,7 +330,7 @@ Chrome 80.0.3987 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Linux 0.0.0&lt;sp
 	var gainNode;
 	var secondIsPlaying;
 	(function() {
-		document.getElementById('2-play-button').addEventListener('click', function() {
+		document.getElementById(&apos;2-play-button&apos;).addEventListener(&apos;click&apos;, function() {
 			if(secondIsPlaying) return;
 			gainNode = context.createGain();
 			oscillator = context.createOscillator();
@@ -339,7 +339,7 @@ Chrome 80.0.3987 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Linux 0.0.0&lt;sp
 			oscillator.start();
 			secondIsPlaying = true;
 		}, false);
-		document.getElementById('2-stop-button').addEventListener('click', function() {
+		document.getElementById(&apos;2-stop-button&apos;).addEventListener(&apos;click&apos;, function() {
 			if (!secondIsPlaying) return;
 			gainNode.gain.setTargetAtTime(0, context.currentTime, 0.015);
 			setTimeout(function() {
@@ -354,7 +354,7 @@ Chrome 80.0.3987 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Linux 0.0.0&lt;sp
 
 &lt;h3 id=&quot;using-exponentialramptovalueattime-to-remove-the-click&quot;&gt;Using exponentialRampToValueAtTime to remove the click&lt;/h3&gt;
 
-&lt;p&gt;Since we are at it, let’s see how it would’ve turned out using &lt;code class=&quot;highlighter-rouge&quot;&gt;exponentialRampToValueAtTime&lt;/code&gt; - which I found to be a bit trickier.&lt;/p&gt;
+&lt;p&gt;Since we are at it, let’s see how it would’ve turned out using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;exponentialRampToValueAtTime&lt;/code&gt; - which I found to be a bit trickier.&lt;/p&gt;
 
 &lt;p&gt;One gotcha is this part of the Web Audio specification:&lt;/p&gt;
 
@@ -362,7 +362,7 @@ Chrome 80.0.3987 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Linux 0.0.0&lt;sp
   &lt;p&gt;(exponentialRampToValueAtTime) Schedules an exponential continuous change in parameter value &lt;strong&gt;from the previous scheduled parameter value&lt;/strong&gt; to the given value.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;em&gt;From the previous scheduled parameter value&lt;/em&gt; means that you must first set the audioParam with an automation method before using the ramping function. This usually means using &lt;code class=&quot;highlighter-rouge&quot;&gt;setValueAtTime()&lt;/code&gt; instead of setting the audioParam value directly (in other words, don’t do this: &lt;code class=&quot;highlighter-rouge&quot;&gt;gainNode.gain.value = someValue&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;From the previous scheduled parameter value&lt;/em&gt; means that you must first set the audioParam with an automation method before using the ramping function. This usually means using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;setValueAtTime()&lt;/code&gt; instead of setting the audioParam value directly (in other words, don’t do this: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gainNode.gain.value = someValue&lt;/code&gt;).&lt;/p&gt;
 
 &lt;p&gt;Another gotcha also described in the spec:&lt;/p&gt;
 
@@ -370,7 +370,7 @@ Chrome 80.0.3987 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Linux 0.0.0&lt;sp
   &lt;p&gt;It is an error if either V0 or V1 is not strictly positive. This also implies &lt;strong&gt;an exponential ramp to 0 is not possible.&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;So we must choose a tiny value, but not zero. As mentioned earlier, we can’t ramp to zero. Also, this time we will use 30 milliseconds as the time for the ramp to occur (this is the total transition time, not the decay time used in &lt;code class=&quot;highlighter-rouge&quot;&gt;setTargetAtTime&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;So we must choose a tiny value, but not zero. As mentioned earlier, we can’t ramp to zero. Also, this time we will use 30 milliseconds as the time for the ramp to occur (this is the total transition time, not the decay time used in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;setTargetAtTime&lt;/code&gt;).&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;context&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;AudioContext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
 &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;oscillator&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createOscillator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
@@ -381,7 +381,7 @@ Chrome 80.0.3987 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Linux 0.0.0&lt;sp
 
 &lt;span class=&quot;nx&quot;&gt;oscillator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
 
-&lt;span class=&quot;nx&quot;&gt;stopButton&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'click'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;stopButton&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;click&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
 
     &lt;span class=&quot;c1&quot;&gt;// Important! Setting a scheduled parameter value&lt;/span&gt;
     &lt;span class=&quot;nx&quot;&gt;gainNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;gain&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setValueAtTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;gainNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;gain&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;currentTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; 
@@ -395,7 +395,7 @@ Chrome 80.0.3987 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Linux 0.0.0&lt;sp
 	var gainNode;
 	var thirdIsPlaying;
 	(function() {
-		document.getElementById('3-play-button').addEventListener('click', function() {
+		document.getElementById(&apos;3-play-button&apos;).addEventListener(&apos;click&apos;, function() {
 			if(thirdIsPlaying) return;
 			gainNode = context.createGain();
 			oscillator = context.createOscillator();
@@ -404,7 +404,7 @@ Chrome 80.0.3987 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Linux 0.0.0&lt;sp
 			oscillator.start();
 			thirdIsPlaying = true;
 		}, false);
-		document.getElementById('3-stop-button').addEventListener('click', function() {
+		document.getElementById(&apos;3-stop-button&apos;).addEventListener(&apos;click&apos;, function() {
 			if (!thirdIsPlaying) return;
 			gainNode.gain.setValueAtTime(gainNode.gain.value, context.currentTime);
 			gainNode.gain.exponentialRampToValueAtTime(0.0001, context.currentTime + 0.03);

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <feed xmlns="http://www.w3.org/2005/Atom" >
-  <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
+  <generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator>
   <link href="http://alemangui.github.io/tag/d%C3%A9veloppement/feed.xml" rel="self" type="application/atom+xml" />
   <link href="http://alemangui.github.io/" rel="alternate" type="text/html" />
-  <updated>2020-08-21T10:11:07+02:00</updated>
+  <updated>2026-05-25T11:46:45+02:00</updated>
   <id>http://alemangui.github.io/tag/d%C3%A9veloppement/feed.xml</id>
 
   
@@ -16,7 +16,7 @@
   
 
   
-    <subtitle>Le blog d'Alejandro Mantecón Guillén</subtitle>
+    <subtitle>Le blog d&apos;Alejandro Mantecón Guillén</subtitle>
   
 
   
@@ -47,7 +47,7 @@
 
 &lt;p&gt;&lt;img src=&quot;assets/images/failed-build.jpg&quot; /&gt;&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Chrome 80.0.3987 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Linux 0.0.0&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; Sound actions should trigger &lt;span class=&quot;s1&quot;&gt;'end'&lt;/span&gt; when buffer ended FAILED
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Chrome 80.0.3987 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Linux 0.0.0&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; Sound actions should trigger &lt;span class=&quot;s1&quot;&gt;&apos;end&apos;&lt;/span&gt; when buffer ended FAILED
 	Expected spy endCallback to have been called.
 	    at tests/Sound.test.js:270:26
 
@@ -65,16 +65,16 @@ Chrome 80.0.3987 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Linux 0.0.0&lt;sp
 
 &lt;p&gt;Heureusement, on peut lancer Chrome avec une option spéciale pour lui demander de désactiver cette politique :&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Chrome &lt;span class=&quot;nt&quot;&gt;--autoplay-policy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;no-user-gesture-required&lt;span class=&quot;s1&quot;&gt;'&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Chrome &lt;span class=&quot;nt&quot;&gt;--autoplay-policy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;no-user-gesture-required&lt;span class=&quot;s1&quot;&gt;&apos;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Pour intégrer ceci dans Pizzicato, il suffit de modifier le &lt;a href=&quot;https://github.com/alemangui/pizzicato/blob/master/karma.conf.js&quot;&gt;fichier de configuration de Karma&lt;/a&gt;. Au moment de définir les &lt;code class=&quot;highlighter-rouge&quot;&gt;customLaunchers&lt;/code&gt; nous pouvons aussi profiter pour passer des arguments additionnels.&lt;/p&gt;
+&lt;p&gt;Pour intégrer ceci dans Pizzicato, il suffit de modifier le &lt;a href=&quot;https://github.com/alemangui/pizzicato/blob/master/karma.conf.js&quot;&gt;fichier de configuration de Karma&lt;/a&gt;. Au moment de définir les &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;customLaunchers&lt;/code&gt; nous pouvons aussi profiter pour passer des arguments additionnels.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;customLaunchers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;nl&quot;&gt;Chrome_travis_ci&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nl&quot;&gt;base&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Chrome'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;flags&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-            &lt;span class=&quot;s1&quot;&gt;'--no-sandbox'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-            &lt;span class=&quot;s1&quot;&gt;'--autoplay-policy=no-user-gesture-required'&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;base&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;Chrome&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;flags&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+            &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;--no-sandbox&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;--autoplay-policy=no-user-gesture-required&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;
         &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
@@ -149,7 +149,7 @@ Chrome 80.0.3987 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Linux 0.0.0&lt;sp
       
 
       
-        <summary type="html">Les navigateurs implémentent des fonctionnalités permettant de bloquer le contenu audio qui démarre automatiquement. Comment s'en sortir en tant que développeur ?</summary>
+        <summary type="html">Les navigateurs implémentent des fonctionnalités permettant de bloquer le contenu audio qui démarre automatiquement. Comment s&apos;en sortir en tant que développeur ?</summary>
       
 
       
@@ -170,22 +170,22 @@ Chrome 80.0.3987 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Linux 0.0.0&lt;sp
 
 &lt;p&gt;Avant de jouer avec Locust, il faut bien qu’on ait quelque chose à tester. Pour le fun, nous allons faire un hello-world avec Flask.&lt;/p&gt;
 
-&lt;p&gt;Je vais d’abord démarrer un environnement virtuel avec Python 3 dans un dossier vide, suivi de l’installation de Flask avec &lt;code class=&quot;highlighter-rouge&quot;&gt;pip&lt;/code&gt; :&lt;/p&gt;
+&lt;p&gt;Je vais d’abord démarrer un environnement virtuel avec Python 3 dans un dossier vide, suivi de l’installation de Flask avec &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pip&lt;/code&gt; :&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;» virtualenv &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; python3 venv
 » &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; venv/bin/activate
-» pip install flask&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+» pip &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;flask&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Créons maintenant un fichier &lt;code class=&quot;highlighter-rouge&quot;&gt;hello.py&lt;/code&gt; avec le code disponible dans le &lt;a href=&quot;https://flask.palletsprojects.com/en/1.1.x/quickstart/#a-minimal-application&quot;&gt;site Flask&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Créons maintenant un fichier &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;hello.py&lt;/code&gt; avec le code disponible dans le &lt;a href=&quot;https://flask.palletsprojects.com/en/1.1.x/quickstart/#a-minimal-application&quot;&gt;site Flask&lt;/a&gt;.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;flask&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Flask&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;app&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Flask&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__name__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
-&lt;span class=&quot;nd&quot;&gt;@app.route&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'/'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;route&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;/&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;hello_world&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Hello, World!'&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;Hello, World!&apos;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Et voilà, nous avons un endpoint sur &lt;code class=&quot;highlighter-rouge&quot;&gt;http://127.0.0.1:5000/&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Et voilà, nous avons un endpoint sur &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;http://127.0.0.1:5000/&lt;/code&gt;.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;» &lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;FLASK_APP&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;hello.py&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; flask run
   &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; Serving Flask app &lt;span class=&quot;s2&quot;&gt;&quot;hello.py&quot;&lt;/span&gt;
@@ -196,30 +196,30 @@ Chrome 80.0.3987 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Linux 0.0.0&lt;sp
 
 &lt;p&gt;Locust permet de simuler de milliers d’utilisateurs simultanés sur notre app. Derrière le rideau, il crée un processus léger via gevent (plus précisément un &lt;a href=&quot;http://www.gevent.org/api/gevent.greenlet.html&quot;&gt;greenlet&lt;/a&gt;) par utilisateur simulé. Ce choix technique permet de simuler un grand nombre d’usagers sur une seule machine.&lt;/p&gt;
 
-&lt;p&gt;Commençons par créer un fichier &lt;code class=&quot;highlighter-rouge&quot;&gt;locustfile.py&lt;/code&gt;. Ce fichier servira pour décrire les tests de charge.&lt;/p&gt;
+&lt;p&gt;Commençons par créer un fichier &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;locustfile.py&lt;/code&gt;. Ce fichier servira pour décrire les tests de charge.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;locust&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;HttpLocust&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TaskSet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;between&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;UserBehaviour&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TaskSet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;nd&quot;&gt;@task&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;task&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;WebsiteUser&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;HttpLocust&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;task_set&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;UserBehaviour&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;wait_time&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;between&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;La class &lt;code class=&quot;highlighter-rouge&quot;&gt;UserBehaviour&lt;/code&gt; nous permet de définir l’activité que les usagers vont mener. Dans notre cas il y a un seul et unique endpoint à la racine qu’on represente ici avec la fonction &lt;code class=&quot;highlighter-rouge&quot;&gt;index&lt;/code&gt; décoré avec &lt;code class=&quot;highlighter-rouge&quot;&gt;@task&lt;/code&gt; pour indiquer à Locust qu’il s’agit d’une tâche que les utilisateurs vont effectuer.&lt;/p&gt;
+&lt;p&gt;La class &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;UserBehaviour&lt;/code&gt; nous permet de définir l’activité que les usagers vont mener. Dans notre cas il y a un seul et unique endpoint à la racine qu’on represente ici avec la fonction &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;index&lt;/code&gt; décoré avec &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@task&lt;/code&gt; pour indiquer à Locust qu’il s’agit d’une tâche que les utilisateurs vont effectuer.&lt;/p&gt;
 
-&lt;p&gt;La class &lt;code class=&quot;highlighter-rouge&quot;&gt;WebsiteUser&lt;/code&gt; represente l’utilisateur lui même. On spécifie la &lt;code class=&quot;highlighter-rouge&quot;&gt;task_set&lt;/code&gt; qu’il réalisera ainsi que le temps qu’il attend entre chaque tâche - entre cinq et neuf secondes dans notre cas.&lt;/p&gt;
+&lt;p&gt;La class &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;WebsiteUser&lt;/code&gt; represente l’utilisateur lui même. On spécifie la &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;task_set&lt;/code&gt; qu’il réalisera ainsi que le temps qu’il attend entre chaque tâche - entre cinq et neuf secondes dans notre cas.&lt;/p&gt;
 
-&lt;p&gt;Si vous avez nommé ce fichier &lt;code class=&quot;highlighter-rouge&quot;&gt;locustfile.py&lt;/code&gt; il suffit de taper &lt;code class=&quot;highlighter-rouge&quot;&gt;locust&lt;/code&gt; dans la console pour tout démarrer. Si vous l’avez nommé différemment il faudra ajouter &lt;code class=&quot;highlighter-rouge&quot;&gt;-f &amp;lt;&amp;lt;path-to-file&amp;gt;&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Si vous avez nommé ce fichier &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;locustfile.py&lt;/code&gt; il suffit de taper &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;locust&lt;/code&gt; dans la console pour tout démarrer. Si vous l’avez nommé différemment il faudra ajouter &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-f &amp;lt;&amp;lt;path-to-file&amp;gt;&amp;gt;&lt;/code&gt;&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;» locust
-   &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&amp;lt;date&amp;gt;] /INFO/locust.main: Starting web monitor at http://&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;:8089
-   &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&amp;lt;date&amp;gt;] /INFO/locust.main: Starting Locust 0.14.4&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+   &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&amp;lt;&lt;span class=&quot;nb&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;]&lt;/span&gt; /INFO/locust.main: Starting web monitor at http://&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;:8089
+   &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&amp;lt;&lt;span class=&quot;nb&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;]&lt;/span&gt; /INFO/locust.main: Starting Locust 0.14.4&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Locust a mis en place l’interface web sur &lt;code class=&quot;highlighter-rouge&quot;&gt;http://localhost:8089&lt;/code&gt;. Cette interface nous permet de spécifier le nombre d’usagers à simuler, le taux de création de ces utilisateurs et l’URL de l’application à tester. Démarrons nos tests avec 100 utilisateurs avec un taux de croissance de dix par seconde. Vu que notre hello-world Flask tourne toujours sur le port &lt;code class=&quot;highlighter-rouge&quot;&gt;:5000&lt;/code&gt; on peut le remplir comme cela :&lt;/p&gt;
+&lt;p&gt;Locust a mis en place l’interface web sur &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;http://localhost:8089&lt;/code&gt;. Cette interface nous permet de spécifier le nombre d’usagers à simuler, le taux de création de ces utilisateurs et l’URL de l’application à tester. Démarrons nos tests avec 100 utilisateurs avec un taux de croissance de dix par seconde. Vu que notre hello-world Flask tourne toujours sur le port &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:5000&lt;/code&gt; on peut le remplir comme cela :&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;assets/images/locust-1.jpg&quot; /&gt;&lt;/p&gt;
 
@@ -236,74 +236,74 @@ Chrome 80.0.3987 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Linux 0.0.0&lt;sp
 
 &lt;h2 id=&quot;plus-dendpoints&quot;&gt;Plus d’endpoints&lt;/h2&gt;
 
-&lt;p&gt;Dans la vie réelle on voudra tester des applications qui ont plus d’un endpoint. Par exemple, on peut avoir de comptes utilisateur (et donc un &lt;code class=&quot;highlighter-rouge&quot;&gt;/login&lt;/code&gt; et &lt;code class=&quot;highlighter-rouge&quot;&gt;/logout&lt;/code&gt;). Puis on pourrait aussi mettre à disposition un endpoint pour paramétrer le compte (&lt;code class=&quot;highlighter-rouge&quot;&gt;/account&lt;/code&gt;) ainsi qu’un autre pour accéder au panier d’achat (&lt;code class=&quot;highlighter-rouge&quot;&gt;/cart&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;Dans la vie réelle on voudra tester des applications qui ont plus d’un endpoint. Par exemple, on peut avoir de comptes utilisateur (et donc un &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/login&lt;/code&gt; et &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/logout&lt;/code&gt;). Puis on pourrait aussi mettre à disposition un endpoint pour paramétrer le compte (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/account&lt;/code&gt;) ainsi qu’un autre pour accéder au panier d’achat (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/cart&lt;/code&gt;).&lt;/p&gt;
 
-&lt;p&gt;Ajoutons ces nouvelles routes à notre app Flask sur &lt;code class=&quot;highlighter-rouge&quot;&gt;hello.py&lt;/code&gt; :&lt;/p&gt;
+&lt;p&gt;Ajoutons ces nouvelles routes à notre app Flask sur &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;hello.py&lt;/code&gt; :&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;flask&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Flask&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;app&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Flask&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__name__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
-&lt;span class=&quot;nd&quot;&gt;@app.route&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'/'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;route&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;/&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;home&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Home'&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;Home&apos;&lt;/span&gt;
 
-&lt;span class=&quot;nd&quot;&gt;@app.route&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'/login'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;route&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;/login&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;home&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Login'&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;Login&apos;&lt;/span&gt;
 
-&lt;span class=&quot;nd&quot;&gt;@app.route&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'/logout'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;route&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;/logout&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;home&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Logout'&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;Logout&apos;&lt;/span&gt;
 
-&lt;span class=&quot;nd&quot;&gt;@app.route&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'/account'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;route&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;/account&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;home&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Account'&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;Account&apos;&lt;/span&gt;
 
-&lt;span class=&quot;nd&quot;&gt;@app.route&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'/cart'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;route&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;/cart&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;home&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Cart'&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;Cart&apos;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h3 id=&quot;authentification&quot;&gt;Authentification&lt;/h3&gt;
 
-&lt;p&gt;Cette fois-ci nos utilisateurs doivent s’identifier avant d’accéder aux autres pages. De plus, ils fermeront leur session après avoir fini. Les fonctions &lt;code class=&quot;highlighter-rouge&quot;&gt;on_start&lt;/code&gt; et &lt;code class=&quot;highlighter-rouge&quot;&gt;on_stop&lt;/code&gt; sont appelées avant l’exécution de la première tâche et après la fin du TaskSet respectivement. C’est donc idéal pour placer l’authentification :&lt;/p&gt;
+&lt;p&gt;Cette fois-ci nos utilisateurs doivent s’identifier avant d’accéder aux autres pages. De plus, ils fermeront leur session après avoir fini. Les fonctions &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;on_start&lt;/code&gt; et &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;on_stop&lt;/code&gt; sont appelées avant l’exécution de la première tâche et après la fin du TaskSet respectivement. C’est donc idéal pour placer l’authentification :&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;UserBehaviour&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TaskSet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
 
     &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;on_start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'/login'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;/login&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
     &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;on_stop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'/logout'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;/logout&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h3 id=&quot;comportement-des-usagers&quot;&gt;Comportement des usagers&lt;/h3&gt;
 
-&lt;p&gt;Vu le nombre des pages dans notre app, ce serait utile de paramétrer &lt;code class=&quot;highlighter-rouge&quot;&gt;UserBehaviour&lt;/code&gt; pour que les pages ne soient pas toutes visitées pareil. Nous pouvons nous attendre à que la page d’accueil (&lt;code class=&quot;highlighter-rouge&quot;&gt;/&lt;/code&gt;) soit souvent visité. D’un autre côté, du fait que les utilisateurs ne paramètrent pas leur compte tous les jours, &lt;code class=&quot;highlighter-rouge&quot;&gt;/account&lt;/code&gt; ne sera pas un passage obligé pour tous. Finalement, le panier d’achat (&lt;code class=&quot;highlighter-rouge&quot;&gt;/cart&lt;/code&gt;) se situe un peu au milieu en terme d’affluence.&lt;/p&gt;
+&lt;p&gt;Vu le nombre des pages dans notre app, ce serait utile de paramétrer &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;UserBehaviour&lt;/code&gt; pour que les pages ne soient pas toutes visitées pareil. Nous pouvons nous attendre à que la page d’accueil (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/&lt;/code&gt;) soit souvent visité. D’un autre côté, du fait que les utilisateurs ne paramètrent pas leur compte tous les jours, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/account&lt;/code&gt; ne sera pas un passage obligé pour tous. Finalement, le panier d’achat (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/cart&lt;/code&gt;) se situe un peu au milieu en terme d’affluence.&lt;/p&gt;
 
-&lt;p&gt;Pour ce faire on s’appuiera sur le décorateur &lt;code class=&quot;highlighter-rouge&quot;&gt;@task&lt;/code&gt;, plus précisément sur son paramètre facultatif entier qui répresente le poids, çad la probabilité qu’un utilisateur choisisse la tâche en question pour son action suivante. Une tâche &lt;code class=&quot;highlighter-rouge&quot;&gt;@task(10)&lt;/code&gt; a dix fois plus de probabilité d’être choisie qu’une tâche &lt;code class=&quot;highlighter-rouge&quot;&gt;@task(1)&lt;/code&gt;. Nous pouvons donc récrire notre &lt;code class=&quot;highlighter-rouge&quot;&gt;locustfile.py&lt;/code&gt; de la façon suivante :&lt;/p&gt;
+&lt;p&gt;Pour ce faire on s’appuiera sur le décorateur &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@task&lt;/code&gt;, plus précisément sur son paramètre facultatif entier qui répresente le poids, çad la probabilité qu’un utilisateur choisisse la tâche en question pour son action suivante. Une tâche &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@task(10)&lt;/code&gt; a dix fois plus de probabilité d’être choisie qu’une tâche &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@task(1)&lt;/code&gt;. Nous pouvons donc récrire notre &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;locustfile.py&lt;/code&gt; de la façon suivante :&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;locust&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;HttpLocust&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TaskSet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;between&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;UserBehaviour&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TaskSet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
 
     &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;on_start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'/login'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;/login&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
     &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;on_stop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'/logout'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;/logout&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
-    &lt;span class=&quot;nd&quot;&gt;@task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
-    &lt;span class=&quot;nd&quot;&gt;@task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;cart&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/cart&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/cart&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
-    &lt;span class=&quot;nd&quot;&gt;@task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;account&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/account&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/account&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;WebsiteUser&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;HttpLocust&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;task_set&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;UserBehaviour&lt;/span&gt;
@@ -317,7 +317,7 @@ Chrome 80.0.3987 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Linux 0.0.0&lt;sp
 
 &lt;h2 id=&quot;locust-en-mode-distribuée&quot;&gt;Locust en mode distribuée&lt;/h2&gt;
 
-&lt;p&gt;Si nos besoins de simulation sont trop importants pour être faits sur une seule machine, Locust permet d’exécuter les tests de façon distribuée. Il suffit de créer une instance Locust &lt;em&gt;master&lt;/em&gt; (avec l’option &lt;code class=&quot;highlighter-rouge&quot;&gt;-master&lt;/code&gt;) à laquelle on ajoutera des noeuds créés avec l’option &lt;code class=&quot;highlighter-rouge&quot;&gt;slave&lt;/code&gt; et &lt;code class=&quot;highlighter-rouge&quot;&gt;---master-host&lt;/code&gt; pour indiquer où se trouve l’instance maître.&lt;/p&gt;
+&lt;p&gt;Si nos besoins de simulation sont trop importants pour être faits sur une seule machine, Locust permet d’exécuter les tests de façon distribuée. Il suffit de créer une instance Locust &lt;em&gt;master&lt;/em&gt; (avec l’option &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-master&lt;/code&gt;) à laquelle on ajoutera des noeuds créés avec l’option &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;slave&lt;/code&gt; et &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;---master-host&lt;/code&gt; pour indiquer où se trouve l’instance maître.&lt;/p&gt;
 
 &lt;p&gt;Sur une machine on ferait :&lt;/p&gt;
 
